@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
+  <script defer src="ui-example.min.js"></script>
+  <style>
+    button {
+      display: block;
+      background-color: #1144EE;
+      padding: 0.75rem 1rem;
+      border: 0;
+      outline: 0;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+    button:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  ADOBE
+  <ui-example 
+    text="asdfasd"
+    object='{"value": "objeto con una propiedad value dentro"}'
+  >
+    <div>Ejemplo de slot</div>
+  </ui-example>
+  <ui-example-b 
+    text="asdfasd"
+    object='{"value": "objeto con una propiedad value dentro"}'
+  >
+    <div>Ejemplo de slot</div>
+  </ui-example-b>
+
+  <div style="margin-top: 2rem">
+    <button onclick="changeString()">Change string value</button>
+    <button onclick="changeChecked()">Set checked</button>
+  </div>
+
+  <script>
+
+    var isChecked = true
+    var DOM = {
+      exampleComponent: document.querySelector('ui-example')
+    };
+
+    DOM.exampleComponent.addEventListener('change', function(event, data) {
+      console.log(event, data)
+    }, false)
+
+    function changeString() {
+      const now = new Date().toLocaleString();
+      DOM.exampleComponent.setAttribute('text', now)
+    }
+
+    function changeChecked() {
+      isChecked
+        ? DOM.exampleComponent.setAttribute('checked', true)
+        : DOM.exampleComponent.removeAttribute('checked', false)
+      isChecked = !isChecked;
+    }
+
+  </script>
+</body>
+</html>
