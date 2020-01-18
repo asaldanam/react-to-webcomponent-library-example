@@ -1,6 +1,5 @@
+import { byAttrVal, byBooleanAttrVal, byContent, byJsonAttrVal, createCustomElement, DOMModel, registerEvent } from '@adobe/react-webcomponent';
 import UIExample from '../components/UIExample';
-import { createCustomElement, DOMModel, byAttrVal, byBooleanAttrVal, byJsonAttrVal, byContent, registerEvent } from '@adobe/react-webcomponent';
-import UIExampleB from '../components/UIExampleB';
 
 class Model extends DOMModel {
 	@byAttrVal() text;
@@ -10,5 +9,3 @@ class Model extends DOMModel {
 	@registerEvent("change") change;	
 }
 window.customElements.define('ui-example', createCustomElement(UIExample, Model, 'element'));
-
-window.customElements.define('ui-example-b', createCustomElement(UIExampleB, Model, 'element'));

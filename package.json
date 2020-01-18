@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack-dev-server",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -17,6 +18,7 @@
     "apollo-client": "^2.6.0",
     "graphql": "^14.3.1",
     "graphql-tag": "^2.10.1",
+    "material-table": "^1.55.0",
     "react": "^16.8.6",
     "react-apollo": "^2.5.6",
     "react-dom": "^16.8.6",

@@ -10,6 +10,7 @@
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
   <script defer src="ui-example.min.js"></script>
+  <script defer src="ui-table.min.js"></script>
   <style>
     button {
       display: block;
@@ -37,12 +38,7 @@
   >
     <div>Ejemplo de slot</div>
   </ui-example>
-  <ui-example-b 
-    text="asdfasd"
-    object='{"value": "objeto con una propiedad value dentro"}'
-  >
-    <div>Ejemplo de slot</div>
-  </ui-example-b>
+  <ui-table></ui-table>
 
   <div style="margin-top: 2rem">
     <button onclick="changeString()">Change string value</button>

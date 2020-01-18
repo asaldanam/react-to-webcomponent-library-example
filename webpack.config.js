@@ -6,6 +6,7 @@ const baseComponentsPath = `${__dirname}/dist`;
 module.exports = {
 	entry: {
 		'ui-example': [ './src/webcomponents/ui-example.js' ],
+		'ui-table': [ './src/webcomponents/ui-table.js' ],
 	},
 	output: {
 		path: `${baseComponentsPath}`,
