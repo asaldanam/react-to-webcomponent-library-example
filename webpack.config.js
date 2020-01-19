@@ -1,6 +1,7 @@
 
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const baseComponentsPath = `${__dirname}/dist`;
 module.exports = {
@@ -12,8 +13,8 @@ module.exports = {
 		path: `${baseComponentsPath}`,
 		filename: '[name].min.js'
 	},
-	mode: 'development',
-	devtool: 'source-map',
+	mode: 'production',
+	// devtool: 'source-map',
 	module: {
 		rules: [
 			{
@@ -34,20 +35,13 @@ module.exports = {
 	},
 	plugins: [],
   optimization: {
-    minimizer: [
-      // we specify a custom UglifyJsPlugin here to get source maps in production
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        uglifyOptions: {
-          compress: false,
-          ecma: 6,
-          mangle: true
-        },
-        sourceMap: true
-      })
-    ]
+    minimizer: [new TerserWebpackPlugin({})],
   },
+	performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+	},
 	externals: {
 		react: 'React',
 		'react-dom': 'ReactDOM'
