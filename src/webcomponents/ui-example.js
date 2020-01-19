@@ -8,4 +8,4 @@ class Model extends DOMModel {
 	@byContent() children;
 	@registerEvent("change") change;	
 }
-window.customElements.define('ui-example', createCustomElement(UIExample, Model, 'element'));
+window.customElements.define('ui-example', createCustomElement(UIExample, Model, 'container'));
