@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
   <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
-  <script defer src="ui-example.min.js"></script>
-  <script defer src="ui-table.min.js"></script>
+  <script async src="ui-example.min.js"></script>
+  <script async src="ui-table.min.js"></script>
+  <script async src="ui-virtual-list.min.js"></script>
 </head>
 <body>
   ADOBE
@@ -21,12 +21,15 @@
   >
     <div>Ejemplo de slot</div>
   </ui-example>
-  <ui-table></ui-table>
 
   <div style="margin-top: 2rem">
     <button onclick="changeString()">Change string value</button>
     <button onclick="changeChecked()">Set checked</button>
   </div>
+
+  <ui-table></ui-table>
+
+  <ui-virtual-list></ui-virtual-list>
 
   <script>
 
